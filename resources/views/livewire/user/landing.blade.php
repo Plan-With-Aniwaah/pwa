@@ -3,8 +3,8 @@
         .hero {
             position: relative;
             height: 100vh;
-            min-height: 300px;
-            max-height: 900px;
+            min-height: 500px;
+            max-height: 700px;
             overflow: hidden;
             border-radius: 1rem;
         }
@@ -238,64 +238,46 @@
         <div class="hero">
             <img class="hero-image" src="{{ asset('/images/14.jpeg') }}" alt="Welcome Image">
             <div class="hero-content">
-                <div class="relative w-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white py-16 px-6 text-center">
-                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
-                        WELCOME TO PLAN WITH ANIWAAH
-                    </h1>
-                    <p class="max-w-2xl mx-auto text-lg md:text-xl mb-6">
-                        Join us as we transform your ideas into unforgettable events.
-                        Smart planning tools designed for modern creators and dreamers.
-                    </p>
-                    <a href="#features"
-                       class="inline-block bg-white text-pink-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-pink-100 transition">
-                        Start Planning with Aniwaah
-                    </a>
-                </div>
-
+                <h1>WELCOME TO PLAN WITH ANIWAAH</h1>
+                <p>Transform your ideas into reality with intelligent planning tools designed for modern creators</p>
+                <a href="#features" class="cta-button">Start Planning Today</a>
             </div>
         </div>
 
         <div class="features" id="features">
             <div class="features-container">
-                <h2>Why Choose <span>Aniwaah</span>?</h2>
+                <h2>Why Choose <span>Aniwaa</span>?</h2>
                 <div class="features-grid">
-
                     <div class="feature-card">
-                        <div class="feature-icon">🎉</div>
-                        <h3>Event Planning & Consultation</h3>
-                        <p>We bring your vision to life with expert guidance, personalized ideas, and professional event planning tailored to your needs.</p>
+                        <div class="feature-icon">🎯</div>
+                        <h3>Smart Goals</h3>
+                        <p>Set and track goals with AI-powered insights that adapt to your progress and help you stay on course.</p>
                     </div>
-
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Visual Planning</h3>
+                        <p>See your plans come to life with beautiful visualizations and interactive timelines that make planning intuitive.</p>
+                    </div>
                     <div class="feature-card">
                         <div class="feature-icon">🤝</div>
-                        <h3>Coordination & Management</h3>
-                        <p>From logistics to timelines, our team ensures everything runs smoothly so you can focus on enjoying your special moments.</p>
+                        <h3>Team Collaboration</h3>
+                        <p>Work seamlessly with your team in real-time. Share ideas, assign tasks, and achieve more together.</p>
                     </div>
-
                     <div class="feature-card">
-                        <div class="feature-icon">🎁</div>
-                        <h3>Souvenirs & Gifts</h3>
-                        <p>We provide customized souvenirs and keepsakes that make your event unforgettable and leave lasting memories with your guests.</p>
+                        <div class="feature-icon">⚡</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Experience blazing speed with our optimized platform. No lag, no waiting—just pure productivity.</p>
                     </div>
-
                     <div class="feature-card">
-                        <div class="feature-icon">💡</div>
-                        <h3>Creative Concepts</h3>
-                        <p>Our creative team crafts unique themes and designs that make your events stand out with style and elegance.</p>
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Your data is encrypted and protected. We prioritize your privacy with enterprise-grade security.</p>
                     </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <h3>Stress-Free Experience</h3>
-                        <p>We handle the details, big and small, ensuring you enjoy a seamless event without the usual stress and pressure.</p>
-                    </div>
-
                     <div class="feature-card">
                         <div class="feature-icon">🌍</div>
-                        <h3>Trusted Expertise</h3>
-                        <p>With years of experience, we are a trusted partner for unforgettable events, from small gatherings to grand celebrations.</p>
+                        <h3>Anywhere Access</h3>
+                        <p>Plan from anywhere on any device. Your workspace syncs seamlessly across all platforms.</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -304,11 +286,11 @@
     <div class="stats">
         <div class="stats-container">
             <div class="stat-item">
-                <h3>1.2K+</h3>
+                <h3>50K+</h3>
                 <p>Active Users</p>
             </div>
             <div class="stat-item">
-                <h3>1k+</h3>
+                <h3>1M+</h3>
                 <p>Plans Created</p>
             </div>
             <div class="stat-item">
@@ -321,4 +303,3 @@
             </div>
         </div>
     </div>
-</div>

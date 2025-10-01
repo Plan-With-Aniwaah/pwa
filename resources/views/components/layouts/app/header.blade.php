@@ -70,6 +70,19 @@
             </flux:navlist.item>
         </flux:navlist.group>
     </flux:navlist>
+    <flux:navlist variant="outline">
+        <flux:navlist.group :heading="__('Navigation')">
+            <flux:navlist.item icon="layout-grid" :href="url('/user/about')" :current="request()->is('/user/about')" wire:navigate>
+                {{ __('About') }}
+            </flux:navlist.item>
+        </flux:navlist.group>
+    </flux:navlist>    <flux:navlist variant="outline">
+        <flux:navlist.group :heading="__('Navigation')">
+            <flux:navlist.item icon="layout-grid" :href="url('/user/contact')" :current="request()->is('/user/contact')" wire:navigate>
+                {{ __('Contact') }}
+            </flux:navlist.item>
+        </flux:navlist.group>
+    </flux:navlist>
 
     <flux:spacer />
 

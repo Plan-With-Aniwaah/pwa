@@ -12,8 +12,19 @@
     </a>
 
     <flux:navbar class="-mb-px max-lg:hidden">
-        <flux:navbar.item icon="layout-grid" :href="url('/user/welcome')" :current="request()->is('/')" wire:navigate>
+        <flux:navbar.item icon="layout-grid" :href="url('/user/welcome')" :current="request()->is('/user/welcome')" wire:navigate>
             {{ __('Home') }}
+        </flux:navbar.item>
+    </flux:navbar>
+
+    <flux:navbar class="-mb-px max-lg:hidden">
+        <flux:navbar.item icon="layout-grid" :href="url('/user/about')" :current="request()->is('/user/about')" wire:navigate>
+            {{ __('About') }}
+        </flux:navbar.item>
+    </flux:navbar>
+    <flux:navbar class="-mb-px max-lg:hidden">
+        <flux:navbar.item icon="layout-grid" :href="url('/user/contact')" :current="request()->is('/user/contact')" wire:navigate>
+            {{ __('Contact') }}
         </flux:navbar.item>
     </flux:navbar>
 

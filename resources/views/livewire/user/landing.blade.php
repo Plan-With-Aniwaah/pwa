@@ -246,7 +246,7 @@
 
         <div class="features" id="features">
             <div class="features-container">
-                <h2>Why Choose <span>Aniwaa</span>?</h2>
+                <h2>Why Choose <span>Aniwaah</span>?</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">🎯</div>

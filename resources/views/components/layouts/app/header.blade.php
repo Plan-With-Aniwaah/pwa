@@ -96,6 +96,14 @@
             </flux:navlist.item>
         </flux:navlist.group>
     </flux:navlist>
+        <flux:navlist variant="outline">
+        <flux:navlist.group :heading="__('Navigation')">
+            <flux:navlist.item icon="layout-grid" :href="url('/user/gallery')" :current="request()->is('/user/gallery')"
+                               wire:navigate>
+                {{ __('Gallery') }}
+            </flux:navlist.item>
+        </flux:navlist.group>
+    </flux:navlist>
 
     <flux:spacer/>
 

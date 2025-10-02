@@ -43,6 +43,6 @@ class Contact extends Component
 
     public function render()
     {
-        return view('livewire.user.contact')->layout('components.layouts.app.header');;
+        return view('livewire.user.contact')->layout('components.layouts.app.header');
     }
 }

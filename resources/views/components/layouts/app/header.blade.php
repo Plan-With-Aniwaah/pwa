@@ -52,6 +52,15 @@
                 :label="__('Documentation')"
             />
         </flux:tooltip>
+        <flux:tooltip :content="__('Login')" position="bottom">
+            <flux:navbar.item
+                class="h-10 max-lg:hidden [&>div>svg]:size-5"
+                icon="book-open-text"
+                href="{{route('login')}}"
+                target="_blank"
+                :label="__('Login')"
+            />
+        </flux:tooltip>
     </flux:navbar>
 </flux:header>
 
@@ -93,6 +102,9 @@
 
         <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
             {{ __('Documentation') }}
+        </flux:navlist.item>
+        <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
+            {{ __('Login') }}
         </flux:navlist.item>
     </flux:navlist>
 </flux:sidebar>

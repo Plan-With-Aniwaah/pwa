@@ -229,7 +229,7 @@
                             <!-- Email Field -->
                             <div class="group">
                                 <label for="email" class="block text-sm font-bold text-gray-800 mb-2">
-                                    Email Address <span class="text-red-500">*</span>
+                                    Email Address
                                 </label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-gray-400">

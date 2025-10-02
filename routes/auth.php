@@ -12,6 +12,7 @@ Route::get('login', function (AuthKitLoginRequest $request) {
 Route::get('authenticate', function (AuthKitAuthenticationRequest $request) {
     return tap(to_route('dashboard'), fn () => $request->authenticate());
 })->middleware(['guest']);
+Route::get('gallery', \App\Livewire\Admin\Gallery::class)->name('gallery');
 
 Route::post('logout', function (AuthKitLogoutRequest $request) {
     return $request->logout();

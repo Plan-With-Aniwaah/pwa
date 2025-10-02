@@ -26,7 +26,7 @@ class Contact extends Component
         $this->validate([
             'name'    => 'required|string|max:255',
             'contact' => 'required|numeric',
-            'email'   => 'required|email',
+            'email'   => 'nullable|email',
             'message' => 'required|string|max:1000',
         ]);
 

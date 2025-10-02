@@ -15,7 +15,7 @@ class Gallery extends Component
     public function create()
     {
         $this->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048'
         ]);
 
         $path = $this->image->store('galleries', 'public');

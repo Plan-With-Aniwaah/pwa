@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\WorkOS\Http\Middleware\ValidateSessionWithWorkOS;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/', \App\Livewire\User\Landing::class)->name('user.welcome');
 
 Route::middleware([
     'auth',

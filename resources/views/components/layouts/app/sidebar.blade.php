@@ -23,11 +23,21 @@
                 </flux:navlist.group>
             </flux:navlist>
 
+
+            <flux:navlist variant="outline">
+                <flux:navlist.group :heading="__('Shop Management')" class="grid">
+                    <flux:navlist.item icon="home" :href="url('products')"  :current="request()->routeIs('Product')" wire:navigate>{{ __('Product') }}</flux:navlist.item>
+                </flux:navlist.group>
+            </flux:navlist>
+
+
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Others')" class="grid">
                     <flux:navlist.item icon="home" :href="url('/user/welcome')"  :current="request()->routeIs('Gallery')" wire:navigate>{{ __('Home') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
+
+
 
             <flux:spacer />
 

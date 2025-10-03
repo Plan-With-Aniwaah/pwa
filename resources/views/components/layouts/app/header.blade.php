@@ -108,7 +108,7 @@
     <flux:spacer/>
 
     <flux:navlist variant="outline">
-        <flux:navlist.item icon="home" href="dashboard" target="_blank">
+        <flux:navlist.item icon="home" href="/dashboard" target="_blank">
             {{ __('Dashboard') }}
         </flux:navlist.item>
         <flux:navlist.item icon="book-open-text" href="/login" target="_blank">

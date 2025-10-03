@@ -1,3 +1,6 @@
+        <div>
+    <div class="container mx-auto p-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
 
         <!-- Upload Form -->
@@ -47,6 +50,9 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div>

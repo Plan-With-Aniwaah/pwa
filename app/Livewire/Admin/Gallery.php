@@ -37,6 +37,6 @@ class Gallery extends Component
     public function render()
     {
         $galleries = \App\Models\Gallery::all();
-        return view('livewire.admin.gallery', compact('galleries'))->layout('components.layouts.app.sidebar');
+        return view('livewire.admin.gallery', compact('galleries'));
     }
 }

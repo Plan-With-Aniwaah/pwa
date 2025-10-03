@@ -12,11 +12,14 @@ class Gallery extends Component
 
     public $image;
 
+    protected $rules = [
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048',
+    ];
+
     public function create()
     {
-        $this->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp,svg|max:2048'
-        ]);
+        
+        $this->validate();
 
         $path = $this->image->store('galleries', 'public');
 
@@ -27,6 +30,7 @@ class Gallery extends Component
         session()->flash('message', 'Image uploaded successfully');
         $this->reset('image');
     }
+
 
     public function delete($id)
     {

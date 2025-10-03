@@ -37,22 +37,18 @@
                             alt="Gallery Image"
                             class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500"
                         />
-
-                        <!-- Hover overlay -->
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                            <button
+                        <button
                                 wire:click="delete({{ $gallery->id }})"
-                                class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg shadow"
+                                class=" bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg shadow"
                             >
                                 Delete
                             </button>
-                        </div>
                     </div>
+                       
+                    
                 @endforeach
             </div>
         </div>
     </div>
 </div>
-        </div>
-    </div>
-</div>
+        </div></div></div>

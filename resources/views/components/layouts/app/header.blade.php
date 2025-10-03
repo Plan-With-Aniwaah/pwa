@@ -42,6 +42,8 @@
 
     <flux:navbar class="me-1.5 space-x-0.5 rtl:space-x-reverse py-0!">
 
+        @if(\Illuminate\Support\Facades\Auth::user())
+
         <flux:tooltip :content="__('Dashboard')" position="bottom">
             <flux:navbar.item
                 class="h-10 max-lg:hidden [&>div>svg]:size-5"
@@ -51,16 +53,20 @@
                 :label="__('Dashboard')"
             />
         </flux:tooltip>
+        @endif
 
+
+        @if(!\Illuminate\Support\Facades\Auth::user())
         <flux:tooltip :content="__('Login')" position="bottom">
             <flux:navbar.item
                 class="h-10 max-lg:hidden [&>div>svg]:size-5"
-                icon="book-open-text"
+                icon="lock-open"
                 href="{{route('login')}}"
                 target="_blank"
                 :label="__('Login')"
             />
         </flux:tooltip>
+            @endif
     </flux:navbar>
 </flux:header>
 
@@ -107,13 +113,18 @@
 
     <flux:spacer/>
 
+
     <flux:navlist variant="outline">
+            @if(\Illuminate\Support\Facades\Auth::user())
         <flux:navlist.item icon="home" href="/dashboard" target="_blank">
             {{ __('Dashboard') }}
         </flux:navlist.item>
-        <flux:navlist.item icon="book-open-text" href="/login" target="_blank">
+        @endif
+        @if(!\Illuminate\Support\Facades\Auth::user())
+        <flux:navlist.item icon="lock-open" href="/login" target="_blank">
             {{ __('Login') }}
         </flux:navlist.item>
+        @endif
     </flux:navlist>
 </flux:sidebar>
 

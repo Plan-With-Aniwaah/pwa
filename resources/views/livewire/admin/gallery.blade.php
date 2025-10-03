@@ -19,7 +19,7 @@
                 type="submit"
                 class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow"
             >
-                Upload
+                Uploadw
             </button>
         </form>
     </div>

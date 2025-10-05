@@ -127,16 +127,21 @@
                             <label for="product_category" class="block text-sm font-semibold text-gray-700 mb-2">
                                 Category <span class="text-red-500">*</span>
                             </label>
-                            <input 
+                            <select 
                                 type="text" 
                                 id="product_category" 
                                 wire:model="product_category"
                                 class="mt-1 block w-full px-4 py-3 rounded-xl border-2 border-gray-200 shadow-sm 
                                        focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
                                        transition duration-200 ease-in-out
-                                       placeholder-gray-400 text-gray-900"
-                                placeholder="e.g., Electronics"
-                            >
+                                       placeholder-gray-400 text-gray-900">
+                                       <option value="Bridal Accessories">Bridal Accessories</option>
+                                       <option value="Bridezmaids keepsakes">Bridezmaids keepsakes</option>
+                                        <option value="Grroonsmen keepsake">Grroonsmen keepsake</option>
+                                        <option value="Party supplies">Party supplies</option>
+                                        <option value="Dowry wrappings">Dowry wrappings"</option>
+                        </select>
+                             
                             @error('product_category') 
                                 <p class="mt-2 text-sm text-red-600 flex items-center">
                                     <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">

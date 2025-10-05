@@ -27,7 +27,12 @@
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Shop Management')" class="grid">
                     <flux:navlist.item icon="home" :href="url('products')"  :current="request()->routeIs('Product')" wire:navigate>{{ __('Product') }}</flux:navlist.item>
+                    <flux:navlist.item icon="home" :href="url('Uploadedproducts')"  :current="request()->routeIs('Uploadedproducts')" wire:navigate>{{ __('Uploadedproducts') }}</flux:navlist.item>
+
                 </flux:navlist.group>
+                
+
+                
             </flux:navlist>
 
 

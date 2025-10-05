@@ -26,29 +26,30 @@ class Products extends Component
         $this->reset([
             'product_name',
             'product_description',
-            'product_image',
+            'product_images',
             'product_price',
             'product_category',
             'product_tags',
-            'product_video',
+            'product_videos',
             'product_quantity'
         ]);
     }
     protected $rules = [
         'product_name' => 'required|string',
         'product_description' => 'required|string',
-        'product_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'product_images' => 'nullable|array',
+        'product_images.*' => 'image|mimes:jpg,jpeg,png,gif,webp|max:10240',
         'product_price' => 'required|numeric',
         'product_category' => 'required|string',
         'product_tags' => 'nullable|string',
-        'product_video' => 'nullable|file|max:102400',
+        'product_videos' => 'nullable|array',
+        'product_videos.*' => 'file|mimetypes:video/mp4,video/avi,video/mov,video/wmv|max:614400', // 100 MB each
         'product_quantity' => 'required|integer',
     ];
 
  public function create()
     {
         $this->validate();
-
     
 
         $imagePaths = [];

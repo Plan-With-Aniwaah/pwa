@@ -9,11 +9,11 @@ class Product extends Model
     protected $fillable = [
         'product_name',
         'product_description',
-        'product_image',
+        'product_images',
         'product_price',
         'product_category',
         'product_tags',
         'product_quantity',
-        'product_video',
+        'product_videos',
     ];
 }

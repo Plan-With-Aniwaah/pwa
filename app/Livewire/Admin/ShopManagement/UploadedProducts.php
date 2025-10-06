@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\ShopManagement;
 
 use App\Models\Product;
 use Livewire\Component;
+use Livewire\Attributes\Url;
 
 class UploadedProducts extends Component
 {
@@ -18,9 +19,25 @@ class UploadedProducts extends Component
     public $id;
     public $isEdit = false;
 
+        #[Url(keep: true)]
+
+    public $search = "";
+
     public function render()
     {
-$products = \App\Models\Product::all();
+        $products = Product::query()
+            ->when($this->search, function ($query) {
+                $search = $this->search;
+                $query->where(function($q) use ($search) {
+                    $q->where('product_name', 'like', "%{$search}%")
+                      ->orWhere('product_category', 'like', "%{$search}%")
+                      ->orWhere('product_tags', 'like', "%{$search}%")
+                      ->orWhere('product_description', 'like', "%{$search}%");
+                });
+            })
+            ->orderBy('id', 'desc')
+            ->get();
+
         return view('livewire.admin.shop-management.uploaded-products', compact('products'));
     }
 }

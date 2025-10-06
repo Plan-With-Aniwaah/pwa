@@ -1,5 +1,25 @@
 <div class="p-6">
-    <h2 class="text-2xl font-bold mb-6 text-gray-800">Uploaded Products</h2>
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Uploaded Products</h2>
+<div class="relative">
+    <input 
+        type="text"
+        wire:model.live.debounce.500ms="search"
+        placeholder="Search products..."
+        class="px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 pr-10"
+    >
+    @if($search)
+        <button 
+            wire:click="clearSearch" 
+            type="button"
+            class="absolute right-3 top-2 text-gray-400 hover:text-gray-600 text-2xl leading-none"
+        >
+            &times;
+        </button>
+    @endif
+</div>
+
+    </div>
 
     @if ($products->isEmpty())
         <div class="text-center py-10 text-gray-500">
@@ -48,7 +68,7 @@
                                 <span>{{ $product->product_category }}</span>
                             </div>
                             <span class="text-green-600 font-bold">
-                                ${{ number_format($product->product_price, 2) }}
+                                GHC {{ number_format($product->product_price, 2) }}
                             </span>
                         </div>
 
@@ -124,8 +144,7 @@
                                 @endforeach
                             </div>
 
-                          
-
+                    
                             <!-- Thumbnails -->
                             <div class="flex overflow-x-auto gap-2 p-4 bg-gray-50">
                                 @foreach ($images as $index => $image)

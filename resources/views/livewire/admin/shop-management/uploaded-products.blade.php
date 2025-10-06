@@ -12,7 +12,8 @@
                     <!-- Product Image -->
                     @if ($product->product_images)
                         <img 
-                            src="{{ asset($product->product_images) }}" 
+                            src="{{ Storage::url($product->product_images[0]) }}"
+
                             alt="{{ $product->product_name }}"
                             class="w-full h-48 object-cover"
                         >
@@ -48,7 +49,7 @@
                         <div class="flex justify-between mt-4">
                             <button
                                 wire:click="edit({{ $product->id }})"
-                                class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg shadow"
+                                class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-black text-sm rounded-lg shadow"
                             >
                                 Edit
                             </button>

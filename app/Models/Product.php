@@ -16,4 +16,9 @@ class Product extends Model
         'product_quantity',
         'product_videos',
     ];
+
+    protected $casts = [
+        'product_images' => 'array',
+        'product_videos' => 'array',
+    ];
 }

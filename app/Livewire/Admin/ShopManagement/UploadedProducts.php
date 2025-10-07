@@ -23,6 +23,35 @@ class UploadedProducts extends Component
 
     public $search = "";
 
+    public function delete($id)
+    {
+        $product = Product::find($id);
+        if ($product) {
+            $product->delete();
+            session()->flash('message', 'Product deleted successfully.');
+        } else {
+            session()->flash('error', 'Product not found.');
+        }
+    }
+
+    public function edit($id)
+    {
+        $product = Product::find($id);
+        if ($product) {
+            $this->id = $product->id;
+            $this->product_name = $product->product_name;
+            $this->product_description = $product->product_description;
+            $this->product_images = $product->product_images;
+            $this->product_price = $product->product_price;
+            $this->product_category = $product->product_category;
+            $this->product_tags = $product->product_tags;
+            $this->product_videos = $product->product_videos;
+            $this->product_quantity = $product->product_quantity;
+            $this->isEdit = true;
+        } else {
+            session()->flash('error', 'Product not found.');
+        }
+    }
     public function render()
     {
         $products = Product::query()

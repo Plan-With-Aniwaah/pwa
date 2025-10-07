@@ -38,7 +38,7 @@ class Products extends Component
         'product_name' => 'required|string',
         'product_description' => 'required|string',
         'product_images' => 'nullable|array',
-        'product_images.*' => 'image|mimes:jpg,jpeg,png,gif,webp|max:10240',
+        'product_images.*' => 'image|mimes:jpg,jpeg,png,gif,webp, heic|max:10240',
         'product_price' => 'required|numeric',
         'product_category' => 'required|string',
         'product_tags' => 'nullable|string',

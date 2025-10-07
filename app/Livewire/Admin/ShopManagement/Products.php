@@ -56,7 +56,7 @@ class Products extends Component
         if (!empty($this->product_images)) {
             foreach ($this->product_images as $i => $image) {
                 // use storeAs on 'public' disk so you can access via Storage::url()
-                $filename = time() . '_' . $i . '.' . $image->getClientOriginalExtension();
+                 $filename = time() . '_' . $i . '.jpeg';
                 $path = $image->storeAs('images', $filename, 'public');
                 $imagePaths[] = $path;
             }

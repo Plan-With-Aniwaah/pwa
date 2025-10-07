@@ -13,10 +13,11 @@ Route::get('authenticate', function (AuthKitAuthenticationRequest $request) {
     return tap(to_route('dashboard'), fn () => $request->authenticate());
 })->middleware(['guest']);
 
-Route::get('gallery', \App\Livewire\Admin\Gallery::class)->name('gallery');
-Route::get('products', \App\Livewire\Admin\ShopManagement\Products::class)->name('products');
-Route::get('Uploadedproducts', \App\Livewire\Admin\ShopManagement\UploadedProducts::class)->name('Uploadedproducts');
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('gallery', \App\Livewire\Admin\Gallery::class)->name('gallery');
+    Route::get('products', \App\Livewire\Admin\ShopManagement\Products::class)->name('products');
+    Route::get('Uploadedproducts', \App\Livewire\Admin\ShopManagement\UploadedProducts::class)->name('Uploadedproducts');
+});
 Route::post('logout', function (AuthKitLogoutRequest $request) {
     return $request->logout();
 })->middleware(['auth'])->name('logout');

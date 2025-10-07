@@ -49,7 +49,7 @@
                                 <strong>Category:</strong> {{ $product->product_category }}
                             </div>
                             <span class="text-green-600 font-bold">
-                                ${{ number_format($product->product_price, 2) }}
+                                GHC{{ number_format($product->product_price, 2) }}
                             </span>
                         </div>
 
@@ -139,6 +139,8 @@
                     </div>
 
                     <!-- ✏️ Edit Modal -->
+                    @if ($isEdit)
+                        
                     <div 
                         x-show="showEdit"
                         x-transition
@@ -156,6 +158,12 @@
                             </button>
 
                             <div class="p-6">
+                                 @if (session()->has('message'))
+                        <div
+                            class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg shadow-md animate-fade-in">
+                            {{ session('message') }}
+                        </div>
+                    @endif
                                 <h3 class="text-xl font-semibold mb-4 text-gray-700">Edit Product</h3>
 
                                 <!-- Example Edit Form -->
@@ -164,6 +172,112 @@
                                         <label class="block text-gray-600 text-sm mb-2">Product Name</label>
                                         <input type="text" wire:model="product_name" class="w-full border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200">
                                     </div>
+
+                                    <div class="group">
+                        <label for="product_description" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Description <span class="text-red-500">*</span>
+                        </label>
+                        <textarea 
+                            id="product_description" 
+                            wire:model="product_description"
+                            rows="5"
+                            class="mt-1 block w-full px-4 py-3 rounded-xl border-2 border-gray-200 shadow-sm 
+                                   focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
+                                   transition duration-200 ease-in-out
+                                   placeholder-gray-400 text-gray-900 resize-none"
+                            placeholder="Describe your product in detail..."
+                        ></textarea>
+                        @error('product_description') 
+                            <p class="mt-2 text-sm text-red-600 flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                </svg>
+                                {{ $message }}
+                            </p> 
+                        @enderror
+                    </div>
+
+                        <div class="group">
+                            <label for="product_quantity" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Quantity in Stock <span class="text-red-500">*</span>
+                            </label>
+                            <input 
+                                type="number" 
+                                id="product_quantity" 
+                                wire:model="product_quantity"
+                                class="mt-1 block w-full px-4 py-3 rounded-xl border-2 border-gray-200 shadow-sm 
+                                       focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
+                                       transition duration-200 ease-in-out
+                                       placeholder-gray-400 text-gray-900"
+                                placeholder="0"
+                            >
+                            @error('product_quantity') 
+                                <p class="mt-2 text-sm text-red-600 flex items-center">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                    {{ $message }}
+                                </p> 
+                            @enderror
+                        </div>
+
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Product Category -->
+                        <div class="group">
+                            <label for="product_category" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Category <span class="text-red-500">*</span>
+                            </label>
+                            <select 
+                                type="text" 
+                                id="product_category" 
+                                wire:model="product_category"
+                                class="mt-1 block w-full px-4 py-3 rounded-xl border-2 border-gray-200 shadow-sm 
+                                       focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
+                                       transition duration-200 ease-in-out
+                                       placeholder-gray-400 text-gray-900">
+                                       <option value="Bridal Accessories">Bridal Accessories</option>
+                                       <option value="Bridezmaids keepsakes">Bridezmaids keepsakes</option>
+                                        <option value="Grroonsmen keepsake">Grroonsmen keepsake</option>
+                                        <option value="Party supplies">Party supplies</option>
+                                        <option value="Dowry wrappings">Dowry wrappings"</option>
+                        </select>
+                             
+                            @error('product_category') 
+                                <p class="mt-2 text-sm text-red-600 flex items-center">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                    {{ $message }}
+                                </p> 
+                            @enderror
+                        </div>
+
+                        <!-- Product Tags -->
+                        <div class="group">
+                            <label for="product_tags" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Tags
+                            </label>
+                            <input 
+                                type="text" 
+                                id="product_tags" 
+                                wire:model="product_tags"
+                                class="mt-1 block w-full px-4 py-3 rounded-xl border-2 border-gray-200 shadow-sm 
+                                       focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
+                                       transition duration-200 ease-in-out
+                                       placeholder-gray-400 text-gray-900"
+                                placeholder="wireless, bluetooth, audio"
+                            >
+                            <p class="mt-1 text-xs text-gray-500">Separate tags with commas</p>
+                            @error('product_tags') 
+                                <p class="mt-2 text-sm text-red-600 flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                    {{ $message }}
+                                </p> 
+                            @enderror
+                        </div>
+                    </div>
 
                                     <div class="mb-4">
                                         <label class="block text-gray-600 text-sm mb-2">Price</label>
@@ -182,6 +296,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                 </div>
             @endforeach

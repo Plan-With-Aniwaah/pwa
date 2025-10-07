@@ -8,7 +8,7 @@ use Livewire\Attributes\Url;
 
 class UploadedProducts extends Component
 {
-        public $product_name;
+    public $product_name;
     public $product_description;
     public $product_images = [];
     public $product_price;
@@ -16,7 +16,7 @@ class UploadedProducts extends Component
     public $product_tags;
     public $product_videos = [];
     public $product_quantity;
-    public $id;
+    public $productId;
     public $isEdit = false;
 
         #[Url(keep: true)]
@@ -38,7 +38,7 @@ class UploadedProducts extends Component
     {
         $product = Product::find($id);
         if ($product) {
-            $this->id = $product->id;
+            $this->productId = $product->id;
             $this->product_name = $product->product_name;
             $this->product_description = $product->product_description;
             $this->product_images = $product->product_images;
@@ -51,6 +51,26 @@ class UploadedProducts extends Component
         } else {
             session()->flash('error', 'Product not found.');
         }
+    }
+
+    public function update(){
+        $product = Product::find($this->productId);
+        if ($product) {
+            $product->product_name = $this->product_name;
+            $product->product_description = $this->product_description;
+            $product->product_images = $this->product_images;
+            $product->product_price = $this->product_price;
+            $product->product_category = $this->product_category;
+            $product->product_tags = $this->product_tags;
+            $product->product_videos = $this->product_videos;
+            $product->product_quantity = $this->product_quantity;
+            $product->save();
+            session()->flash('message', 'Product updated successfully.');
+            $this->isEdit = false;
+        } else {
+            session()->flash('error', 'Product not found.');
+        }
+
     }
     public function render()
     {
